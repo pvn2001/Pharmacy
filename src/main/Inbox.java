@@ -46,26 +46,27 @@ ArrayList<String> arr ;
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inbox");
+        setBackground(new java.awt.Color(215, 215, 215));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(215, 215, 215));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Inbox Form");
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel1.setText("Inbox");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(276, Short.MAX_VALUE)
+                .addContainerGap(320, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(293, 293, 293))
+                .addGap(316, 316, 316))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,18 +79,19 @@ ArrayList<String> arr ;
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 710, 77);
 
-        jButton1.setText("Send_Message");
+        jButton1.setText("Send Message");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(550, 430, 110, 30);
+        jButton1.setBounds(580, 430, 110, 30);
 
+        jPanel2.setBackground(new java.awt.Color(215, 215, 215));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 102)));
 
-        username.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User_Name : " }));
+        username.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "User Name : " }));
         username.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 usernameItemStateChanged(evt);
@@ -104,7 +106,7 @@ ArrayList<String> arr ;
                 {null, null, null}
             },
             new String [] {
-                "   Message_From", "   Message_To", "   Message_Text"
+                "   Message From", "   Message To", "   Message Text"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -151,11 +153,7 @@ ArrayList<String> arr ;
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 88, 652, 334);
-
-        jLabel2.setIcon(new ImageIcon(Inbox.class.getResource("/img/chat-box.gif"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 70, 730, 400);
+        jPanel2.setBounds(10, 88, 684, 336);
 
         setSize(new java.awt.Dimension(718, 504));
         setLocationRelativeTo(null);
@@ -215,7 +213,6 @@ new Send().setVisible(true);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
