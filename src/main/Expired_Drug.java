@@ -39,12 +39,13 @@ ResultSet res = null;
         setTitle("Expired Drugs");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(215, 215, 215));
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(215, 215, 215));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Expired_Drugs");
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel1.setText("Expired Drugs");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -63,7 +64,7 @@ ResultSet res = null;
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setBackground(new java.awt.Color(215, 215, 215));
         jPanel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
         expired_list.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -75,7 +76,7 @@ ResultSet res = null;
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "          Name", "          Barcode", " Production_Date", "   Expiration_Date", "    QUANTITY", "          Expiry"
+                "          Name", "          Barcode", " Production_Date", "   Epiration_Date", "   Expiration_Time", "          Expiry"
             }
         ) {
             boolean[] canEdit = new boolean [] {

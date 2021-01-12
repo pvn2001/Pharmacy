@@ -76,64 +76,66 @@ ResultSet res= null;
         setTitle("Drug Form");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(215, 215, 215));
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(215, 215, 215));
+        jPanel2.setForeground(new java.awt.Color(215, 215, 215));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Drug Form");
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
+        jLabel1.setText("Add Drug");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(372, 372, 372)
                 .addComponent(jLabel1)
-                .addGap(336, 336, 336))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setBackground(new java.awt.Color(215, 215, 215));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Drug Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Drug_Type : ");
+        jLabel3.setText("Drug Type : ");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setText("Drug_Name : ");
+        jLabel2.setText("Drug Name : ");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel11.setText("Expiration_Date : ");
+        jLabel11.setText("Expiration Date : ");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setText("Drug_Cost_Price : ");
+        jLabel6.setText("Drug Cost Price : ");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel7.setText("Drug_Selling_Price : ");
+        jLabel7.setText("Drug Selling Price : ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Drug_Dose : ");
+        jLabel4.setText("Drug Dose : ");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel10.setText("Production_Date : ");
+        jLabel10.setText("Production Date : ");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel14.setText("Drug_Place : ");
+        jLabel14.setText("Drug Place : ");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel9.setText("Company_Name : ");
+        jLabel9.setText("Company Name : ");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("Drug_Code : ");
+        jLabel5.setText("Drug Code : ");
 
-        company_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Company_Name : " }));
+        company_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Company Name : " }));
 
         pro_day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day : ", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
@@ -151,15 +153,15 @@ ResultSet res= null;
 
         place.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Place : ", "Up", "Down", "Right", "Left" }));
 
-        type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drug_Type : ", "Pills", "Injection", "Syrup", "Drink" }));
+        type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drug Type : ", "Bills", "Injection", "Drink", "Fizzing" }));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel15.setText("Drug_Quantity : ");
+        jLabel15.setText("Drug Quantity : ");
 
         quantity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quantity : ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40" }));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel8.setText("Drug_Barcode  : ");
+        jLabel8.setText("Drug Barcode  : ");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -224,7 +226,7 @@ ResultSet res= null;
                         .addComponent(section, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(place, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,11 +295,11 @@ ResultSet res= null;
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBackground(new java.awt.Color(215, 215, 215));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
         updatedrug.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        updatedrug.setText("Update_Drug");
+        updatedrug.setText("Update Drug");
         updatedrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updatedrugActionPerformed(evt);
@@ -305,7 +307,7 @@ ResultSet res= null;
         });
 
         druglist.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        druglist.setText("Drugs_List");
+        druglist.setText("Drugs List");
         druglist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 druglistActionPerformed(evt);
@@ -321,7 +323,7 @@ ResultSet res= null;
         });
 
         deletedrug.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        deletedrug.setText("Delete_Drug");
+        deletedrug.setText("Delete Drug");
         deletedrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletedrugActionPerformed(evt);
@@ -329,7 +331,7 @@ ResultSet res= null;
         });
 
         adddrug.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        adddrug.setText("Add_Drug");
+        adddrug.setText("Add Drug");
         adddrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adddrugActionPerformed(evt);
@@ -414,7 +416,7 @@ ResultSet res= null;
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(825, 539));
+        setSize(new java.awt.Dimension(834, 598));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

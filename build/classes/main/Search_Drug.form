@@ -40,7 +40,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="33" red="33" type="rgb"/>
+          <Color blue="d7" green="d7" red="d7" type="rgb"/>
         </Property>
       </Properties>
 
@@ -70,7 +70,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="d7" green="d7" red="d7" type="rgb"/>
             </Property>
           </Properties>
 
@@ -100,7 +100,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Search_Drug"/>
+                <Property name="text" type="java.lang.String" value="Search Drug"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -108,7 +108,7 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
+              <Color blue="d7" green="d7" red="d7" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -266,7 +266,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="9" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Search by Drug_Name"/>
+                <Property name="text" type="java.lang.String" value="Search by Drug Name"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
@@ -274,7 +274,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="9" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Search by Drug_Barcode"/>
+                <Property name="text" type="java.lang.String" value="Search by Drug Barcode"/>
               </Properties>
             </Component>
           </SubComponents>
