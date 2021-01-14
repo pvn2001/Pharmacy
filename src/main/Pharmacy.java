@@ -64,11 +64,18 @@ public class Pharmacy extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
         today = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         username = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         username1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        msgAlertDialog = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        btnShowMsg = new javax.swing.JButton();
+        btnCancle = new javax.swing.JButton();
         userB = new javax.swing.JButton();
         drugs = new javax.swing.JButton();
         adduser = new javax.swing.JButton();
@@ -117,15 +124,12 @@ public class Pharmacy extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(215, 215, 215));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setText("Pharmacy Management");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Time");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(1, 1, 1));
         jLabel3.setText("Today");
 
         time.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -136,17 +140,25 @@ public class Pharmacy extends javax.swing.JFrame {
         today.setForeground(new java.awt.Color(153, 0, 0));
         today.setText("00-00-0000");
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/Apps-session-logout-icon.png"))); // NOI18N
+        jButton1.setToolTipText("Logout");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         username.setBackground(new java.awt.Color(255, 255, 255));
         username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         username.setForeground(new java.awt.Color(153, 0, 0));
         username.setText("Login As : ");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(1, 1, 1));
         jLabel5.setText("Login As : ");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(1, 1, 1));
         jLabel11.setText("User Name : ");
 
         username1.setBackground(new java.awt.Color(255, 255, 255));
@@ -154,8 +166,17 @@ public class Pharmacy extends javax.swing.JFrame {
         username1.setForeground(new java.awt.Color(0, 0, 102));
         username1.setText("Login As : ");
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/2572420.postal.envelope.icon.dark.blue.isolated.on.black.background (1).jpg"))); // NOI18N
+        jButton2.setToolTipText("Public Inbox");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(4, 2, 2));
         jLabel4.setText("(Administration)");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -163,7 +184,11 @@ public class Pharmacy extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(175, 175, 175)
+                .addGap(10, 10, 10)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -220,12 +245,78 @@ public class Pharmacy extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel3)
                         .addGap(23, 23, 23)
-                        .addComponent(today)))
+                        .addComponent(today))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                 .addGap(8, 8, 8))
         );
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 1220, 80);
+
+        msgAlertDialog.setBackground(new java.awt.Color(0, 255, 0));
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("You have new Message(s)");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        btnShowMsg.setText("Show Message");
+        btnShowMsg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowMsgActionPerformed(evt);
+            }
+        });
+
+        btnCancle.setText("Cancel");
+
+        javax.swing.GroupLayout msgAlertDialogLayout = new javax.swing.GroupLayout(msgAlertDialog);
+        msgAlertDialog.setLayout(msgAlertDialogLayout);
+        msgAlertDialogLayout.setHorizontalGroup(
+            msgAlertDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(msgAlertDialogLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(btnShowMsg)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(btnCancle, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        msgAlertDialogLayout.setVerticalGroup(
+            msgAlertDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, msgAlertDialogLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(msgAlertDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnShowMsg)
+                    .addComponent(btnCancle))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(msgAlertDialog);
+        msgAlertDialog.setBounds(810, 480, 410, 110);
 
         userB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         userB.setForeground(new java.awt.Color(0, 51, 51));
@@ -434,7 +525,7 @@ public class Pharmacy extends javax.swing.JFrame {
         purchase.setBounds(520, 100, 130, 34);
 
         renew_validate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        renew_validate.setText("Renew Validity");
+        renew_validate.setText("Renew_Validity");
         renew_validate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 renew_validateActionPerformed(evt);
@@ -775,7 +866,12 @@ public class Pharmacy extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_userBActionPerformed
-        
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
     private void renew_validateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renew_validateActionPerformed
         new Renew_Validity().setVisible(true);
     }//GEN-LAST:event_renew_validateActionPerformed
@@ -815,10 +911,20 @@ public class Pharmacy extends javax.swing.JFrame {
     private void shiftsalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shiftsalesActionPerformed
         new Shift_Sales().setVisible(true);
     }//GEN-LAST:event_shiftsalesActionPerformed
-        
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Inbox().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
     private void retdrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retdrugActionPerformed
         new Retrieval_Drug().setVisible(true);
     }//GEN-LAST:event_retdrugActionPerformed
+
+    private void btnShowMsgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowMsgActionPerformed
+        msgAlertDialog.setVisible(false);
+        new Show_Message().setVisible(true);
+        deleteMsg();
+    }//GEN-LAST:event_btnShowMsgActionPerformed
     
     /**
      * @param args the command line arguments
@@ -861,6 +967,8 @@ public class Pharmacy extends javax.swing.JFrame {
     private javax.swing.JButton adduser;
     private javax.swing.JButton alldeals;
     private javax.swing.JButton almost;
+    private javax.swing.JButton btnCancle;
+    private javax.swing.JButton btnShowMsg;
     private javax.swing.JButton buydrug;
     private javax.swing.JButton changepass;
     private javax.swing.JButton checkplace;
@@ -873,8 +981,11 @@ public class Pharmacy extends javax.swing.JFrame {
     private javax.swing.JButton editprice;
     private javax.swing.JButton endwith;
     private javax.swing.JButton expired1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -884,10 +995,12 @@ public class Pharmacy extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logindetails;
     private javax.swing.JButton logout;
     private javax.swing.JButton movedrug;
     private javax.swing.JButton movedrug1;
+    private javax.swing.JPanel msgAlertDialog;
     private javax.swing.JButton newcom;
     public javax.swing.JButton purchase;
     private javax.swing.JButton renew_validate;
@@ -1343,9 +1456,9 @@ public class Pharmacy extends javax.swing.JFrame {
                 to=res.getString("MESSAGE_TO");
                 from=res.getString("MESSAGE_FROM");
                 text=res.getString("MESSAGE_TEXT");
-                //msgAlertDialog.setVisible(true);
+                msgAlertDialog.setVisible(true);
             }else{
-                //msgAlertDialog.setVisible(false);
+                msgAlertDialog.setVisible(false);
             }
             
         }catch(Exception e){
