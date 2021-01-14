@@ -86,7 +86,7 @@ public class Show_Message extends javax.swing.JFrame {
         jLabel4.setText("Message Text : ");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Replay");
+        jButton1.setText("Reply");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
