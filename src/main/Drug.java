@@ -136,6 +136,11 @@ ResultSet res= null;
         jLabel5.setText("Drug Code : ");
 
         company_name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Company Name : " }));
+        company_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                company_nameActionPerformed(evt);
+            }
+        });
 
         pro_day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Day : ", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
@@ -511,6 +516,10 @@ clear();
     private void druglistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_druglistActionPerformed
 new Drug_List().setVisible(true);
     }//GEN-LAST:event_druglistActionPerformed
+
+    private void company_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_company_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_company_nameActionPerformed
 
     /**
      * @param args the command line arguments

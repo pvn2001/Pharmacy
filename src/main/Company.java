@@ -23,6 +23,7 @@ ResultSet res = null;
         initComponents();
         con=Connect.connect();
         companylist();
+        company();
     }
 
     /**
@@ -44,7 +45,7 @@ ResultSet res = null;
         jLabel4 = new javax.swing.JLabel();
         phone = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        name = new javax.swing.JTextField();
+        name = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         save = new javax.swing.JButton();
@@ -106,6 +107,8 @@ ResultSet res = null;
         jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Company Name : ");
 
+        name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -120,8 +123,8 @@ ResultSet res = null;
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(phone, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(name))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(name, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,7 +261,7 @@ ResultSet res = null;
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jLabel5)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 111, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,7 +315,7 @@ ResultSet res = null;
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(957, 444));
+        setSize(new java.awt.Dimension(1062, 444));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -321,13 +324,13 @@ clear();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-if(name.getText().equals("")||address.getText().equals("")||phone.getText().equals("")){
+if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("")||phone.getText().equals("")){
   JOptionPane.showMessageDialog(null,"Complete Company Information","Missing Information",2);
 }else {
-  String sql = "insert into company (NAME,ADDRESS,PHONE) values ('"+name.getText()+"' ,'"+address.getText()+"' ,'"+phone.getText()+"' )";  
+  String sql = "insert into company (NAME,ADDRESS,PHONE) values ('"+String.valueOf(name.getSelectedItem())+"' ,'"+address.getText()+"' ,'"+phone.getText()+"' )";  
   try{
     int suring = JOptionPane.showConfirmDialog(null,"Are You Sure from this Information\n"
-            + "Name : "+name.getText()+"\n"+"Address : "+address.getText()+"\n"+"Phone : "+phone.getText()
+            + "Name : "+String.valueOf(name.getSelectedItem())+"\n"+"Address : "+address.getText()+"\n"+"Phone : "+phone.getText()
             +"\n\n Note : Company_Name Will not be updated");
     if(suring==0){
     pre=con.prepareStatement(sql);
@@ -343,10 +346,10 @@ if(name.getText().equals("")||address.getText().equals("")||phone.getText().equa
     }//GEN-LAST:event_saveActionPerformed
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-if(name.getText().equals("")||address.getText().equals("")||phone.getText().equals("")){
+if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("")||phone.getText().equals("")){
   JOptionPane.showMessageDialog(null,"Complete Company Information","Missing Information",2);
 }else {
-  String sql = "update company set ADDRESS='"+address.getText()+"' ,PHONE='"+phone.getText()+"' where NAME='"+name.getText()+"' ";  
+  String sql = "update company set ADDRESS='"+address.getText()+"' ,PHONE='"+phone.getText()+"' where NAME='"+String.valueOf(name.getSelectedItem())+"' ";  
   try{
     pre=con.prepareStatement(sql);
     pre.execute();
@@ -359,10 +362,10 @@ if(name.getText().equals("")||address.getText().equals("")||phone.getText().equa
     }//GEN-LAST:event_updateActionPerformed
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-   if(name.getText().equals("")){
+   if(String.valueOf(name.getSelectedItem()).equals("")){
   JOptionPane.showMessageDialog(null,"Enter Company_Name You Want to Delete","Missing Information",2);
 }else {
-  String sql = "delete from company where NAME='"+name.getText()+"' ";  
+  String sql = "delete from company where NAME='"+String.valueOf(name.getSelectedItem())+"' ";  
   int suring = JOptionPane.showConfirmDialog(null,"Are You Sure from Deleteing This Information");
   try{
       if(suring==0){
@@ -376,7 +379,6 @@ if(name.getText().equals("")||address.getText().equals("")||phone.getText().equa
   }  
    }  
     }//GEN-LAST:event_deleteActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -430,14 +432,13 @@ if(name.getText().equals("")||address.getText().equals("")||phone.getText().equa
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField name;
+    private javax.swing.JComboBox<String> name;
     private javax.swing.JTextField phone;
     public javax.swing.JButton save;
     public javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 
 private void clear(){
-name.setText("");
 address.setText("");
 phone.setText("");
 }
@@ -451,4 +452,17 @@ private void companylist(){
       JOptionPane.showMessageDialog(null,e.getMessage(),"Error",2);
   }
 }
+
+    private void company(){
+        String sql = "select NAME from company";
+        try{
+            pre=con.prepareStatement(sql);
+            res=pre.executeQuery();
+            while(res.next()){
+                name.addItem(res.getString("NAME"));
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e.getMessage(),"Error",2);
+        }
+    }
 }
