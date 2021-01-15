@@ -19,6 +19,7 @@ public class Pharmacy extends javax.swing.JFrame {
     static int ex;
     User user ;
     Company comp;
+    Company1 comp2;
     static Drug drug ;
     static Move_Drug move_drug;
     Buy_Drug buy;
@@ -40,6 +41,7 @@ public class Pharmacy extends javax.swing.JFrame {
         user = new User();
         drug = new Drug();
         comp = new Company();
+        comp2 = new Company1();
         move_drug = new Move_Drug();
         buy = new Buy_Drug();
         loginas();
@@ -775,10 +777,8 @@ public class Pharmacy extends javax.swing.JFrame {
     }//GEN-LAST:event_endwithActionPerformed
     
     private void newcomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newcomActionPerformed
-        comp.setVisible(true);
-        comp.save.setEnabled(true);
-        comp.update.setEnabled(false);
-        comp.delete.setEnabled(false);
+        comp2.setVisible(true);
+        comp2.save.setEnabled(true);
     }//GEN-LAST:event_newcomActionPerformed
     
     private void drugdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drugdetailsActionPerformed

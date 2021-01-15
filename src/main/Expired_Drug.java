@@ -184,7 +184,7 @@ ResultSet res = null;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
     private void show_table(){ // when you click  expired drug this eill be executed
-        String sql = "select NAME,BARCODE,PRODUCTION_DATE,EXPIRATION_DATE, QUANTITY,EXPIRY from drugs where EXPIRY='Expired' ";
+        String sql = "select NAME,BARCODE,PRODUCTION_DATE,EXPIRATION_DATE, QUANTITY from drugs where expiration_date <= curdate() ";
         try{
             pre=con.prepareStatement(sql); // prepared statmenet when expiry field is expired
             res=pre.executeQuery(); // execute statment 
