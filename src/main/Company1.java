@@ -15,15 +15,15 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Hemaa
  */
-public class Company extends javax.swing.JFrame {
+public class Company1 extends javax.swing.JFrame {
 Connection con = null;
 PreparedStatement pre= null;
 ResultSet res = null;
-    public Company() {
+    public Company1() {
         initComponents();
         con=Connect.connect();
         companylist();
-        company();
+        //company();
     }
 
     /**
@@ -45,12 +45,10 @@ ResultSet res = null;
         jLabel4 = new javax.swing.JLabel();
         phone = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        name = new javax.swing.JComboBox<>();
+        name = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         save = new javax.swing.JButton();
-        delete = new javax.swing.JButton();
-        update = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         company_list = new javax.swing.JTable();
@@ -107,8 +105,6 @@ ResultSet res = null;
         jLabel2.setForeground(new java.awt.Color(1, 1, 1));
         jLabel2.setText("Company Name : ");
 
-        name.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -123,17 +119,17 @@ ResultSet res = null;
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(phone, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(name, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(name))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -163,35 +159,14 @@ ResultSet res = null;
             }
         });
 
-        delete.setBackground(new java.awt.Color(215, 215, 215));
-        delete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        delete.setText("Delete Info");
-        delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteActionPerformed(evt);
-            }
-        });
-
-        update.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        update.setText("Update Info");
-        update.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(185, 185, 185)
                 .addComponent(save)
-                .addGap(9, 9, 9)
-                .addComponent(update)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(delete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -201,8 +176,6 @@ ResultSet res = null;
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(save)
-                    .addComponent(update)
-                    .addComponent(delete)
                     .addComponent(jButton4))
                 .addContainerGap())
         );
@@ -324,13 +297,13 @@ clear();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("")||phone.getText().equals("")){
+if(name.getText().equals("")||address.getText().equals("")||phone.getText().equals("")){
   JOptionPane.showMessageDialog(null,"Complete Company Information","Missing Information",2);
 }else {
-  String sql = "insert into company (NAME,ADDRESS,PHONE) values ('"+String.valueOf(name.getSelectedItem())+"' ,'"+address.getText()+"' ,'"+phone.getText()+"' )";  
+  String sql = "insert into company (NAME,ADDRESS,PHONE) values ('"+name.getText()+"' ,'"+address.getText()+"' ,'"+phone.getText()+"' )";  
   try{
     int suring = JOptionPane.showConfirmDialog(null,"Are You Sure from this Information\n"
-            + "Name : "+String.valueOf(name.getSelectedItem())+"\n"+"Address : "+address.getText()+"\n"+"Phone : "+phone.getText()
+            + "Name : "+name.getText()+"\n"+"Address : "+address.getText()+"\n"+"Phone : "+phone.getText()
             +"\n\n Note : Company_Name Will not be updated");
     if(suring==0){
     pre=con.prepareStatement(sql);
@@ -344,41 +317,6 @@ if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("
   }
 }
     }//GEN-LAST:event_saveActionPerformed
-
-    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
-if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("")||phone.getText().equals("")){
-  JOptionPane.showMessageDialog(null,"Complete Company Information","Missing Information",2);
-}else {
-  String sql = "update company set ADDRESS='"+address.getText()+"' ,PHONE='"+phone.getText()+"' where NAME='"+String.valueOf(name.getSelectedItem())+"' ";  
-  try{
-    pre=con.prepareStatement(sql);
-    pre.execute();
-    JOptionPane.showMessageDialog(null,"Company_Information has been Saved Successfully","Success Operation",1);
-  companylist();
-  clear();}catch(Exception e){
-      JOptionPane.showMessageDialog(null,e.getMessage(),"Error",2);
-  }
-}
-    }//GEN-LAST:event_updateActionPerformed
-
-    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
-   if(String.valueOf(name.getSelectedItem()).equals("")){
-  JOptionPane.showMessageDialog(null,"Enter Company_Name You Want to Delete","Missing Information",2);
-}else {
-  String sql = "delete from company where NAME='"+String.valueOf(name.getSelectedItem())+"' ";  
-  int suring = JOptionPane.showConfirmDialog(null,"Are You Sure from Deleteing This Information");
-  try{
-      if(suring==0){
-    pre=con.prepareStatement(sql);
-    pre.execute();
-    JOptionPane.showMessageDialog(null,"Company_Information has been Deleted Successfully","Success Operation",1);
-    companylist();
-    clear();
-      }}catch(Exception e){
-      JOptionPane.showMessageDialog(null,e.getMessage(),"Error",2);
-  }  
-   }  
-    }//GEN-LAST:event_deleteActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -396,20 +334,21 @@ if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Company.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Company1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Company.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Company1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Company.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Company1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Company.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Company1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Company().setVisible(true);
+                new Company1().setVisible(true);
             }
         });
     }
@@ -417,7 +356,6 @@ if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea address;
     private javax.swing.JTable company_list;
-    public javax.swing.JButton delete;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -432,13 +370,13 @@ if(String.valueOf(name.getSelectedItem()).equals("")||address.getText().equals("
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JComboBox<String> name;
+    private javax.swing.JTextField name;
     private javax.swing.JTextField phone;
     public javax.swing.JButton save;
-    public javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 
 private void clear(){
+name.setText("");
 address.setText("");
 phone.setText("");
 }
@@ -453,7 +391,7 @@ private void companylist(){
   }
 }
 
-    private void company(){
+    /*private void company(){
         String sql = "select NAME from company";
         try{
             pre=con.prepareStatement(sql);
@@ -464,5 +402,5 @@ private void companylist(){
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,e.getMessage(),"Error",2);
         }
-    }
+    }*/
 }
